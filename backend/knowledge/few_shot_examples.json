@@ -1,0 +1,107 @@
+{
+  "examples": [
+    {
+      "id": "whatsapp_vago_checkout",
+      "title": "WhatsApp — Relato Vago de Compra",
+      "badge": "WhatsApp Vago",
+      "quality": "vague",
+      "category": "bug_funcional",
+      "description": "Exemplo clássico de cliente no atendimento WhatsApp relatando erro sem dizer produto, etapa do checkout, pagamento ou navegador.",
+      "text": "Oi, não consegui comprar no site da YouShop, deu erro na hora de pagar.",
+      "suggested_session_id": "PED-9042",
+      "expected_missing_fields": [
+        "platform_environment",
+        "repro_steps",
+        "actual_result",
+        "expected_result",
+        "repro_rate"
+      ],
+      "key_lesson": "Identificar o site YouShop e a etapa genérica de pagamento, mas perguntar dispositivo/navegador, produto, forma de pagamento, mensagem exata e frequência sem inventar dados."
+    },
+    {
+      "id": "checkout_divergencia_log",
+      "title": "Checkout Web — Divergência com Log",
+      "badge": "Divergência Log",
+      "quality": "vague",
+      "category": "erro_integracao",
+      "description": "Cliente no WhatsApp acha que o cartão foi recusado; vincule PED-9042 na Etapa 2 para detectar divergência com HTTP 504 no gateway.",
+      "text": "Cliente chamou no WhatsApp dizendo que tentou finalizar a compra do Tênis Runner Pro na YouShop com cartão de crédito, ficou carregando bastante tempo e deu erro. Ele acha que o cartão foi recusado.",
+      "suggested_session_id": "PED-9042",
+      "expected_missing_fields": [
+        "repro_steps",
+        "expected_result",
+        "repro_rate"
+      ],
+      "key_lesson": "Cruzar relato de suposta recusa de cartão com log PED-9042 para evidenciar divergência (HTTP 504 Gateway Timeout no pagamento, não recusa do emissor)."
+    },
+    {
+      "id": "youshop_ruim_1",
+      "title": "YouShop — Ticket Ruim #1 (Sem Resultados)",
+      "badge": "Ticket Ruim",
+      "quality": "bad",
+      "category": "bug_funcional",
+      "description": "Etapas e descrição preenchidas, mas Resultado Atual e Resultado Esperado estão em branco, além de faltar Taxa de Reprodução e ortografia.",
+      "text": "Etapas para Reproduzir :\nAcesse o site YouShop no Desktop Windows, navegador Google Chrome, versão [v2.14.3]\nAdicione o produto Tênis Runner Pro ao carrinho\nVá para a pagina pricipal do checkout e aplique o cupom BEMVINDO10\nSelecione a forma de pagamento PIX\nClique no botão Aplicar / Atualizar resumo do pedido\nAqui o bug é observado\n\nResultado Atual:\n\n\nResultado Esperado: \n\nDescrição: \nNa pagina pricipal do checkout da YouShop, ao aplicar o cupom BEMVINDO10 e trocar o pagamento para PIX, o desconto é removido e o total volta para o valor cheio sem aviso ao usuario.\n\nTaxa de reprodução:\n\nNotas:\nN/A",
+      "suggested_session_id": "SESS-YS-104",
+      "expected_missing_fields": [
+        "actual_result",
+        "expected_result",
+        "repro_rate"
+      ],
+      "key_lesson": "Perguntar Resultado Atual (1 linha), Resultado Esperado (1 linha) e Taxa de Reprodução; corrigir 'pagina'->'página', 'pricipal'->'principal', 'usuario'->'usuário'; padronizar marcador final."
+    },
+    {
+      "id": "youshop_ruim_2",
+      "title": "YouShop — Ticket Ruim #2 (Etapas Faltando)",
+      "badge": "Ticket Ruim",
+      "quality": "bad",
+      "category": "bug_funcional",
+      "description": "Resultado Atual/Esperado presentes, mas Etapas param no acesso ao site enquanto a Descrição cita cupom, troca para PIX e botão.",
+      "text": "Etapas para Reproduzir :\nAcesse o site YouShop no Desktop Windows, navegador Google Chrome, versão [v2.14.3]\nFaça login com uma conta de cliente ativa\n\nResultado Atual:\nO cupom BEMVINDO10 é removido e o valor total volta ao preço original sem desconto.\n\nResultado Esperado: \nO cupom BEMVINDO10 permanece aplicado após selecionar PIX no pagamento.\n\nDescrição: \nNa pagina pricipal do checkout da YouShop, ao adicionar um item ao carrinho, aplicar o cupom BEMVINDO10 e selecionar a forma de pagamento PIX, o codigo do cupom desaparece e o subtotal volta ao valor cheio.\n\nTaxa de reprodução:\n\nNotas:\nN/A",
+      "suggested_session_id": "SESS-YS-104",
+      "expected_missing_fields": [
+        "repro_steps",
+        "repro_rate"
+      ],
+      "key_lesson": "Detectar que as Etapas estão incompletas em relação à Descrição e perguntar os passos intermediários exatos (produto, carrinho, cupom, troca para PIX), além de Taxa de Reprodução e ortografia ('pagina', 'pricipal', 'codigo')."
+    },
+    {
+      "id": "youshop_ruim_3",
+      "title": "YouShop — Ticket Ruim #3 (Sem Taxa + Ortografia)",
+      "badge": "Ticket Ruim",
+      "quality": "bad",
+      "category": "bug_funcional",
+      "description": "Etapas, resultados e descrição presentes, mas sem Taxa de Reprodução, marcador fora do padrão e erros de ortografia.",
+      "text": "Etapas para Reproduzir :\nAcesse o site YouShop no Desktop Windows, navegador Google Chrome, versão [v2.14.3]\nAdicione o produto Tênis Runner Pro ao carrinho\nVá para a pagina pricipal do checkout e aplique o cupom BEMVINDO10\nSelecione a forma de pagamento PIX\nClique no botão Aplicar / Atualizar resumo do pedido\nAqui o bug é observado\n\nResultado Atual:\nO cupom BEMVINDO10 é removido e o valor total volta ao preço original sem desconto.\n\nResultado Esperado: \nO cupom BEMVINDO10 permanece aplicado após selecionar PIX no pagamento.\n\nDescrição: \nNa pagina pricipal do checkout da YouShop, ao aplicar o cupom BEMVINDO10 e trocar o pagamento para PIX, o codigo promocional é limpo e o total volta para o valor cheio sem aviso ao usuario.\n\nTaxa de reprodução:\n\nNotas:\nN/A",
+      "suggested_session_id": "SESS-YS-104",
+      "expected_missing_fields": [
+        "repro_rate"
+      ],
+      "key_lesson": "Perguntar apenas Taxa de Reprodução; corrigir ortografia ('pagina', 'pricipal', 'codigo', 'usuario') e padronizar marcador 'É aqui que o bug é observado'."
+    },
+    {
+      "id": "youshop_ref_pix",
+      "title": "YouShop — Referência #1 (Integração PIX Safari)",
+      "badge": "Referência Boa",
+      "quality": "good",
+      "category": "erro_integracao",
+      "description": "Ticket bem estruturado de bug no botão Copiar Código PIX no iPhone Safari com Taxa 3/3 e comparação com Android Chrome.",
+      "text": "Etapas para Reproduzir :\nAcesse o checkout da YouShop no iPhone (iOS 18), navegador Safari, versão [v2.14.3]\nAdicione um produto ao carrinho e avance até o pagamento\nSelecione PIX como forma de pagamento e gere o QR Code\nToque multiplas vezes no botão \"Copiar codigo PIX\"\n\nResultado Atual:\nO codigo PIX não é copiado para a área de transferência no Safari iOS e nenhuma confirmação aparece.\n\nResultado Esperado:\nO codigo PIX é copiado para a área de transferência e exibe a mensagem \"Código copiado\".\n\nDescrição:\nNa tela de pagamento PIX da YouShop no Safari iOS, o botão \"Copiar codigo PIX\" não dispara a cópia no navegador após gerar o QR Code, impedindo o cliente de colar no app do banco.\n\nTaxa de Reprodução: 3/3\n\nNOTAS:\nTestado no Android (Google Chrome) e o botão funcionou normalmente; o problema ocorre especificamente na integração de clipboard no Safari iOS.",
+      "suggested_session_id": "SESS-YS-218",
+      "expected_missing_fields": [],
+      "key_lesson": "Classificar como 'erro_integracao', preservar nota comparativa iOS Safari vs Android Chrome e fazer polimento leve ('múltiplas', 'código' e marcador 'É aqui que o bug é observado')."
+    },
+    {
+      "id": "youshop_ref_painel_pii",
+      "title": "YouShop — Referência #2 (Painel WhatsApp + PII)",
+      "badge": "Referência + PII",
+      "quality": "good_with_gaps",
+      "category": "erro_bloqueante",
+      "description": "Ticket detalhado de erro bloqueante no Painel de Atendimento WhatsApp com Taxa 10/10, código de erro não citado e IDs sensíveis do PC.",
+      "text": "Etapas para Reproduzir :\nAcesse o Painel de Atendimento WhatsApp da YouShop no Desktop Windows, navegador Google Chrome, versão [v3.8.1]\nAbra a fila de conversas pendentes de clientes;\nSelecione um cliente com pedido vinculado;\nClique na aba \"Histórico de Pedidos\";\nClique em qualquer linha de pedido;\nÉ aqui que o bug é observado.\nResultado Atual:\nClicar na linha de pedido trava e derruba a sessão do painel.\nResultado Esperado:\nClicar na linha de pedido abre os detalhes do pedido sem travar o painel.\nDescrição:\nAo atender um cliente pelo painel web integrado ao WhatsApp, é possível navegar pelos pedidos usando as setas do teclado sem problemas, porém ao clicar com o mouse em uma linha aparece um modal com código de erro que, ao ser fechado, encerra a sessão do atendente.\nTaxa de Reprodução: 10/ 10.\nNOTAS: Outro atendente testou navegando só com o teclado e o erro não aconteceu. As especificações do PC em que o bug aconteceu são:\nNome do dispositivo\nQA-PC0036\nNome completo do dispositivo\n[QA-PC0036.exemplo.local](http://QA-PC0036.exemplo.local)\nProcessador\n12th Gen Intel(R) Core(TM) i7-12700F (2.10 GHz)\nRAM instalada\n16,0 GB (utilizável: 15,8 GB)\nID do dispositivo\n00000000-0000-0000-0000-000000000000\nID do Produto\n00000-00000-00000-XXXXX\nTipo de sistema\nSistema operacional de 64 bits, processador baseado em x64\nCaneta e toque\nNenhuma entrada à caneta ou por toque disponível para este vídeo",
+      "suggested_session_id": "SESS-YS-309",
+      "expected_missing_fields": [],
+      "key_lesson": "Classificar como 'erro_bloqueante', detectar que o código de erro citado na Descrição não foi informado e que o passo 'Clique em qualquer linha' pode especificar mouse vs teclado; sanitizar IDs/hostname mantendo CPU/RAM/SO úteis."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "version": "2.1.0",
+  "domain": "ecommerce_web_qa",
+  "marker_line": "É aqui que o bug é observado",
+  "first_step_template": "Acesse [sistema/área da YouShop] em [dispositivo e navegador] + versão [se souber]",
+  "criteria": [
+    {
+      "id": "platform_environment",
+      "label": "Sistema, Dispositivo e Navegador",
+      "priority": "high",
+      "friction": "low",
+      "ask_user": true,
+      "weight": 15,
+      "guidance": "Primeira linha deve seguir o formato: Acesse [sistema/área da YouShop] em [dispositivo + navegador] + versão. Se dispositivo, navegador ou versão não foram informados, perguntar ao usuário ou marcar em 'O que não foi confirmado'."
+    },
+    {
+      "id": "repro_steps",
+      "label": "Etapas para Reproduzir",
+      "priority": "critical",
+      "friction": "low",
+      "ask_user": true,
+      "weight": 25,
+      "guidance": "Passos cronológicos detalhados mencionando tela/URL, produto ou pedido, botões clicados, forma de pagamento ou canal (site/WhatsApp) e terminando uma única vez com 'É aqui que o bug é observado'."
+    },
+    {
+      "id": "actual_result",
+      "label": "Resultado Atual",
+      "priority": "critical",
+      "friction": "low",
+      "ask_user": true,
+      "weight": 15,
+      "guidance": "Uma linha concisa descrevendo exatamente o que é observado na tela (mensagem de erro, travamento ou comportamento incorreto)."
+    },
+    {
+      "id": "expected_result",
+      "label": "Resultado Esperado",
+      "priority": "high",
+      "friction": "low",
+      "ask_user": true,
+      "weight": 15,
+      "guidance": "Uma linha concisa descrevendo o que deveria acontecer intencionalmente."
+    },
+    {
+      "id": "description",
+      "label": "Descrição",
+      "priority": "high",
+      "friction": "low",
+      "ask_user": true,
+      "weight": 15,
+      "guidance": "Detalhamento coeso e abrangente do defeito observado e sua localização exata no fluxo, consistente com as Etapas."
+    },
+    {
+      "id": "repro_rate",
+      "label": "Taxa de Reprodução",
+      "priority": "medium",
+      "friction": "low",
+      "ask_user": true,
+      "weight": 15,
+      "guidance": "Formato X/Y (vezes que ocorreu / vezes testadas). Nunca inventar; se não informado, registrar em 'O que não foi confirmado'."
+    },
+    {
+      "id": "notes",
+      "label": "NOTAS",
+      "priority": "low",
+      "friction": "optional",
+      "ask_user": false,
+      "weight": 0,
+      "guidance": "Informações relevantes para outros testers (ex.: comparação entre navegadores/dispositivos, comportamento teclado vs mouse, códigos de erro de logs, specs úteis sem PII). Nunca exigir especificações de PC ou IDs do Windows do cliente final."
+    }
+  ]
+}
