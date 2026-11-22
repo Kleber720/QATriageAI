@@ -4,6 +4,39 @@ Assistente de triagem para **e-commerce web e atendimento (YouShop / WhatsApp)**
 
 ---
 
+## Como Rodar Localmente
+
+### Pré-requisitos
+- **Python 3.12+** (testado em Python 3.14.5)
+- **Node.js 20+** (testado em Node.js 26.13.0)
+- **Ollama** instalado e rodando localmente
+
+### 1. Preparar o Modelo no Ollama
+```powershell
+ollama pull qwen3:4b-instruct
+```
+*(Opcional)* Criar a persona dedicada com o `Modelfile` do projeto:
+```powershell
+ollama create qa-triage -f ollama/Modelfile
+```
+
+### 2. Backend (FastAPI)
+```powershell
+cd backend
+.\.venv\Scripts\uvicorn.exe app.main:app --reload --port 8000
+```
+Swagger UI: `http://127.0.0.1:8000/docs`
+
+### 3. Frontend (React + Vite)
+Em outro terminal:
+```powershell
+cd frontend
+npm run dev
+```
+Acesse **`http://localhost:5173`**.
+
+---
+
 ## Como o Fluxo Funciona
 
 1. **Entrada (Relato Vago ou Rascunho):** o cliente/atendente envia o relato ou seleciona um dos 7 cenários corporativos em 1 clique.
@@ -72,39 +105,6 @@ Executado com `python tests\run_ollama_evals.py` sobre os casos de [`qa_evals.js
 | **YouShop — Ticket Ruim #1 / #2 / #3** | `SESS-YS-104` | Detecção de resultados vazios, passos faltando no checkout, marcador fora do padrão e ortografia |
 | **YouShop — Referência #1 (Integração PIX Safari)** | `SESS-YS-218` | Classificação `erro_integracao`, comparação Android Chrome vs Safari iOS e `ERR_IOS_CLIPBOARD_DENIED` |
 | **YouShop — Referência #2 (Painel WhatsApp + PII)** | `SESS-YS-309` | Sanitização de UUID/Product ID mantendo specs úteis + erro `ERR_PANEL_ROW_0x4F` |
-
----
-
-## Como Rodar Localmente
-
-### Pré-requisitos
-- **Python 3.12+** (testado em Python 3.14.5)
-- **Node.js 20+** (testado em Node.js 26.13.0)
-- **Ollama** instalado e rodando localmente
-
-### 1. Preparar o Modelo no Ollama
-```powershell
-ollama pull qwen3:4b-instruct
-```
-*(Opcional)* Criar a persona dedicada com o `Modelfile` do projeto:
-```powershell
-ollama create qa-triage -f ollama/Modelfile
-```
-
-### 2. Backend (FastAPI)
-```powershell
-cd backend
-.\.venv\Scripts\uvicorn.exe app.main:app --reload --port 8000
-```
-Swagger UI: `http://127.0.0.1:8000/docs`
-
-### 3. Frontend (React + Vite)
-Em outro terminal:
-```powershell
-cd frontend
-npm run dev
-```
-Acesse **`http://localhost:5173`**.
 
 ---
 
