@@ -1,12 +1,10 @@
 # QA Triage AI (YouShop) — Triagem Local de Bugs para QA
 
-Assistente de triagem para **e-commerce web e atendimento (YouShop / WhatsApp)** que transforma **relatos vagos** (*"Oi, não consegui comprar no site da YouShop, deu erro na hora de pagar"*) ou **rascunhos 
-
-
+Assistente de triagem para **e-commerce web e atendimento (YouShop / WhatsApp)** que transforma **relatos vagos** (*"Oi, não consegui comprar no site da YouShop, deu erro na hora de pagar"*) ou **rascunhos incompletos de tickets** em relatórios reproduzíveis para equipes de QA, rodando **100% localmente** com **Ollama** (`qwen3:4b-instruct`), **FastAPI (Python)** e **React + TypeScript**.
 
 <p align="center">
   <img src="qatriage-preview.png" width="100%" alt="Preview da Interface QATriageAI" />
-</p>incompletos de tickets** em relatórios reproduzíveis para equipes de QA, rodando **100% localmente** com **Ollama** (`qwen3:4b-instruct`), **FastAPI (Python)** e **React + TypeScript**.
+</p>
 
 ---
 
